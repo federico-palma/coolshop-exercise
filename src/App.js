@@ -1,17 +1,15 @@
-import RowComponent from './Components/RowComponent'
+import { useState } from "react";
+import ResultComponent from "./Components/ResultComponent";
+import RowsContainerComponent from "./Components/RowsContainerComponent";
 import "./App.css";
 
 function App() {
+  const [result, setResult] = useState(0);
+
   return (
     <main className="App">
-      <button>Add new row</button>
-      <div className="rows-container">
-        <RowComponent></RowComponent>
-      </div>
-      <div className="result-container">
-        <h2>Result:</h2>
-        <h2>100</h2>
-      </div>
+      <RowsContainerComponent></RowsContainerComponent>
+      <ResultComponent></ResultComponent>
     </main>
   );
 }
