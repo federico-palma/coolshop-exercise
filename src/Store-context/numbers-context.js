@@ -25,7 +25,7 @@ export const NumbersContextProvider = (props) => {
 
   useEffect(() => {
     calculateResult(userNumbers);
-  });
+  }, [userNumbers]);
   
   const context = {
     numbers: userNumbers,
