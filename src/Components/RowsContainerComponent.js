@@ -8,16 +8,12 @@ const RowsContainerComponent = () => {
       setNumOfRows(prevNumOfRows => prevNumOfRows + 1)
   }
 
-  const handleRowSum = () => {
-      
-  }
-
   return (
     <div className="row-container">
       <button onClick={handleAddNewRow}>Add new row</button>
       <ol className="row-list">
           {[...Array(numOfRows)].map((e, i) => {
-              return <RowComponent key={i}></RowComponent>
+              return <RowComponent key={i} index={i}></RowComponent>
           })}
       </ol>
     </div>

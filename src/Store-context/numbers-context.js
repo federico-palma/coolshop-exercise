@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const NumbersContext = createContext({
   numbers: [],
@@ -7,18 +7,30 @@ const NumbersContext = createContext({
 
 export const NumbersContextProvider = (props) => {
   const [userNumbers, setUserNumbers] = useState([]);
-  const context = {
-    numbers: userNumbers,
-    result: 0,
-    calculateResult: calculateResult(this.numbers),
+  const [result, setResult] = useState(0);
+
+  const handleValueChange = (index, value) => {
+    let tempArray = [...userNumbers];
+    tempArray[index] = value;
+    setUserNumbers(tempArray);
   };
 
   const calculateResult = (numbersArray) => {
-    let sum = 0;
+    let tempResult = 0;
     for (let i = 0; i < numbersArray.length; i++) {
-      sum += numbersArray[i];
+      if (!isNaN(numbersArray[i])) tempResult += numbersArray[i];
     }
-    return sum;
+    setResult(tempResult);
+  };
+
+  useEffect(() => {
+    calculateResult(userNumbers);
+  });
+  
+  const context = {
+    numbers: userNumbers,
+    result: result,
+    handleValueChange: handleValueChange,
   };
 
   return (
