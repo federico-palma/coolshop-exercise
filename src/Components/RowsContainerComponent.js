@@ -11,11 +11,11 @@ const RowsContainerComponent = () => {
   return (
     <div className="row-container">
       <button onClick={handleAddNewRow}>Add new row</button>
-      <ol className="row-list">
+      <ul className="row-list">
           {[...Array(numOfRows)].map((e, i) => {
               return <RowComponent key={i} index={i}></RowComponent>
           })}
-      </ol>
+      </ul>
     </div>
   );
 };
