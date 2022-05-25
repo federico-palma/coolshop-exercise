@@ -1,15 +1,15 @@
-import { useState } from "react";
 import ResultComponent from "./Components/ResultComponent";
 import RowsContainerComponent from "./Components/RowsContainerComponent";
+import { NumbersContextProvider } from "./Store-context/numbers-context";
 import "./App.css";
 
 function App() {
-  const [result, setResult] = useState(0);
-
   return (
     <main className="App">
-      <RowsContainerComponent></RowsContainerComponent>
-      <ResultComponent></ResultComponent>
+      <NumbersContextProvider>
+        <RowsContainerComponent></RowsContainerComponent>
+        <ResultComponent></ResultComponent>
+      </NumbersContextProvider>
     </main>
   );
 }
