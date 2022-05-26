@@ -1,14 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 
 const NumbersContext = createContext({
-  numbers: [],
   rowsArray: [],
   result: 0,
 });
 
 let keyCounter = 0;
 function keyGen() {
-  keyCounter += 1;
+  keyCounter++;
   return keyCounter;
 }
 
@@ -18,13 +17,11 @@ export const NumbersContextProvider = (props) => {
   };
 
   const [rowsArray, setRowsArray] = useState([rowObjectCreator()]);
-  const [userNumbers, setUserNumbers] = useState([]);
   const [result, setResult] = useState(0);
 
   const handleValueChange = (index, value) => {
     let tempArray = [...rowsArray];
     tempArray.find(x => x.id === index).value = value;
-    setUserNumbers(tempArray);
   };
 
   const handleAddNewRow = () => {
@@ -34,14 +31,12 @@ export const NumbersContextProvider = (props) => {
   const handleDeleteRow = (index) => {
     let tempArray = [...rowsArray];
     tempArray.splice(index, 1);
-    setUserNumbers(tempArray);
     setRowsArray(rowsArray.filter((element) => element.id !== index));
   };
 
   const calculateResult = (rowsArray) => {
     let tempArray = rowsArray.filter(element => !isNaN(element.value) && element.enable)
-    let tempResult = tempArray.reduce((prevElement, element) => prevElement + element, 0)
-    console.log(tempResult);
+    let tempResult = tempArray.reduce((prevElement, element) => prevElement + element.value, 0)
     setResult(tempResult);
   };
 
@@ -50,7 +45,6 @@ export const NumbersContextProvider = (props) => {
   }, [rowsArray]);
 
   const context = {
-    numbers: userNumbers,
     rowsArray: rowsArray,
     result: result,
     handleValueChange: handleValueChange,
