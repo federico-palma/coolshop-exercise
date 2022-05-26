@@ -21,7 +21,8 @@ export const NumbersContextProvider = (props) => {
 
   const handleValueChange = (index, value) => {
     let tempArray = [...rowsArray];
-    tempArray.find(x => x.id === index).value = value;
+    tempArray.find((x) => x.id === index).value = value;
+    setRowsArray(tempArray);
   };
 
   const handleAddNewRow = () => {
@@ -35,8 +36,13 @@ export const NumbersContextProvider = (props) => {
   };
 
   const calculateResult = (rowsArray) => {
-    let tempArray = rowsArray.filter(element => !isNaN(element.value) && element.enable)
-    let tempResult = tempArray.reduce((prevElement, element) => prevElement + element.value, 0)
+    let tempArray = rowsArray.filter(
+      (element) => !isNaN(element.value) && element.enable
+    );
+    let tempResult = tempArray.reduce(
+      (prevElement, element) => prevElement + element.value,
+      0
+    );
     setResult(tempResult);
   };
 
