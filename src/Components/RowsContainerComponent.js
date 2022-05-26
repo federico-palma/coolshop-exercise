@@ -7,7 +7,7 @@ const RowsContainerComponent = () => {
 
   return (
     <div className="row-container">
-      <button onClick={numbersCtx.handleAddNewRow}>Add new row</button>
+      <button className="new-row-btn" onClick={numbersCtx.handleAddNewRow}>Add new row</button>
       <ul className="row-list">
         {numbersCtx.rowsArray.map((element) => {
           return (

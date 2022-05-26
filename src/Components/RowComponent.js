@@ -31,6 +31,7 @@ const RowComponent = (props) => {
       </button>
       <input
         type="number"
+        className="row-input"
         placeholder="Enter a number"
         onChange={(e) => setCurrentValue(e.target.value)}
       />
