@@ -26,7 +26,6 @@ const RowComponent = (props) => {
 
   return (
     <div className="row">
-      <span>{props.ind}</span>
       <button type="button" className="operator" onClick={handleChangeOperator}>
         {currentOperator}
       </button>
