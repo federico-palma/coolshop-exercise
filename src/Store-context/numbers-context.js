@@ -30,8 +30,6 @@ export const NumbersContextProvider = (props) => {
   };
 
   const handleDeleteRow = (index) => {
-    let tempArray = [...rowsArray];
-    tempArray.splice(index, 1);
     setRowsArray(rowsArray.filter((element) => element.id !== index));
   };
 
