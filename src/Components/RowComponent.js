@@ -21,6 +21,7 @@ const RowComponent = (props) => {
 
   return (
     <div className="row">
+      <span>{props.ind}</span>
       <button type="button" className="operator" onClick={handleChangeOperator}>
         {currentOperator}
       </button>
@@ -29,11 +30,15 @@ const RowComponent = (props) => {
         placeholder="Enter a number"
         onChange={(e) => setCurrentValue(e.target.value)}
       />
+      <button
+        type="button"
+        className="delete-btn"
+        onClick={() => numbersCtx.handleDeleteRow(props.index)}
+      >
+        Delete
+      </button>
       <button type="button" className="disable-btn">
         Disable
-      </button>
-      <button type="button" className="delete-btn">
-        Delete
       </button>
     </div>
   );

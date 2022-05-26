@@ -1,36 +1,55 @@
 import { createContext, useEffect, useState } from "react";
 
 const NumbersContext = createContext({
-  numbers: [],
+  rowsArray: [],
   result: 0,
 });
 
+let keyCounter = 0;
+function keyGen() {
+  keyCounter++;
+  return keyCounter;
+}
+
 export const NumbersContextProvider = (props) => {
-  const [userNumbers, setUserNumbers] = useState([]);
+  const rowObjectCreator = () => {
+    return { id: keyGen(), value: 0, enable: true };
+  };
+
+  const [rowsArray, setRowsArray] = useState([rowObjectCreator()]);
   const [result, setResult] = useState(0);
 
   const handleValueChange = (index, value) => {
-    let tempArray = [...userNumbers];
-    tempArray[index] = value;
-    setUserNumbers(tempArray);
+    let tempArray = [...rowsArray];
+    tempArray.find(x => x.id === index).value = value;
   };
 
-  const calculateResult = (numbersArray) => {
-    let tempResult = 0;
-    for (let i = 0; i < numbersArray.length; i++) {
-      if (!isNaN(numbersArray[i])) tempResult += numbersArray[i];
-    }
+  const handleAddNewRow = () => {
+    setRowsArray((prevValue) => [...prevValue, rowObjectCreator()]);
+  };
+
+  const handleDeleteRow = (index) => {
+    let tempArray = [...rowsArray];
+    tempArray.splice(index, 1);
+    setRowsArray(rowsArray.filter((element) => element.id !== index));
+  };
+
+  const calculateResult = (rowsArray) => {
+    let tempArray = rowsArray.filter(element => !isNaN(element.value) && element.enable)
+    let tempResult = tempArray.reduce((prevElement, element) => prevElement + element.value, 0)
     setResult(tempResult);
   };
 
   useEffect(() => {
-    calculateResult(userNumbers);
-  }, [userNumbers]);
-  
+    calculateResult(rowsArray);
+  }, [rowsArray]);
+
   const context = {
-    numbers: userNumbers,
+    rowsArray: rowsArray,
     result: result,
     handleValueChange: handleValueChange,
+    handleAddNewRow: handleAddNewRow,
+    handleDeleteRow: handleDeleteRow,
   };
 
   return (

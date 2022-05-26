@@ -1,20 +1,17 @@
-import { useState } from "react";
+import { useContext } from "react";
 import RowComponent from "./RowComponent";
+import NumbersContext from "../Store-context/numbers-context";
 
 const RowsContainerComponent = () => {
-  const [numOfRows, setNumOfRows] = useState(5);
-
-  const handleAddNewRow = () => {
-      setNumOfRows(prevNumOfRows => prevNumOfRows + 1)
-  }
+  const numbersCtx = useContext(NumbersContext);
 
   return (
     <div className="row-container">
-      <button onClick={handleAddNewRow}>Add new row</button>
+      <button onClick={numbersCtx.handleAddNewRow}>Add new row</button>
       <ul className="row-list">
-          {[...Array(numOfRows)].map((e, i) => {
-              return <RowComponent key={i} index={i}></RowComponent>
-          })}
+        {numbersCtx.rowsArray.map(element => {
+          return <RowComponent key={element.id} index={element.id} value={element.value} enabled={element.enable}></RowComponent>;
+        })}
       </ul>
     </div>
   );
