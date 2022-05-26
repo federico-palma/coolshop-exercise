@@ -13,7 +13,7 @@ const RowsContainerComponent = () => {
           return (
             <RowComponent
               key={element.id}
-              index={element.id}
+              id={element.id}
               value={element.value}
               enabled={element.enable}
             ></RowComponent>
