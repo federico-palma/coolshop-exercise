@@ -38,7 +38,7 @@ const RowComponent = (props) => {
       <button
         type="button"
         className="delete-btn"
-        onClick={() => numbersCtx.handleDeleteRow(props.index)}
+        onClick={() => numbersCtx.handleDeleteRow(props.id)}
       >
         Delete
       </button>
