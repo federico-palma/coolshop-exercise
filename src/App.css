@@ -1,6 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
 main {
+  background-color: rgb(176, 75, 75);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px auto;
+  justify-content: space-between;
+}
+
+.row-container {
+  height: 100%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-list {
+  background-color: bisque;
+  height: 100%;
+  width: 400px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.result-container {
+  background-color: rgb(165, 15, 15);
+  color: white;
+  width: 400px;
+  padding: 30px;
+  padding-top: 0px;
+  border-radius: 15px;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
