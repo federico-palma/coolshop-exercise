@@ -19,9 +19,10 @@ export const NumbersContextProvider = (props) => {
   const [rowsArray, setRowsArray] = useState([rowObjectCreator()]);
   const [result, setResult] = useState(0);
 
-  const handleValueChange = (index, value) => {
+  const handleRowChange = (rowId, value, isEnabled) => {
     let tempArray = [...rowsArray];
-    tempArray.find((x) => x.id === index).value = value;
+    tempArray.find((x) => x.id === rowId).value = value;
+    tempArray.find((x) => x.id === rowId).enable = isEnabled;
     setRowsArray(tempArray);
   };
 
@@ -29,8 +30,8 @@ export const NumbersContextProvider = (props) => {
     setRowsArray((prevValue) => [...prevValue, rowObjectCreator()]);
   };
 
-  const handleDeleteRow = (index) => {
-    setRowsArray(rowsArray.filter((element) => element.id !== index));
+  const handleDeleteRow = (rowId) => {
+    setRowsArray(rowsArray.filter((element) => element.id !== rowId));
   };
 
   const calculateResult = (rowsArray) => {
@@ -51,7 +52,7 @@ export const NumbersContextProvider = (props) => {
   const context = {
     rowsArray: rowsArray,
     result: result,
-    handleValueChange: handleValueChange,
+    handleRowChange: handleRowChange,
     handleAddNewRow: handleAddNewRow,
     handleDeleteRow: handleDeleteRow,
   };
