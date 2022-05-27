@@ -1,3 +1,5 @@
+// Context component works as a state management system and handles most of the Logic.
+
 import { createContext, useEffect, useState } from "react";
 
 const NumbersContext = createContext({
