@@ -2,8 +2,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #B9B7BD;
+}
+
 main {
-  background-color: rgb(165, 165, 165);
+  background-color: #B9B7BD;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -47,7 +51,7 @@ li {
 }
 
 .row-list {
-  background-color: rgb(238, 238, 238);
+  background-color: #EEEDE7;
   height: auto;
   min-width: 400px;
   width: fit-content;
@@ -113,7 +117,7 @@ li {
 }
 
 .result-container {
-  background-color: rgb(19, 22, 165);
+  background-color: #868B8E;
   color: white;
   font-size: 1.2rem;
   width: 400px;
@@ -131,4 +135,16 @@ li {
 
 .empty-list-message {
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    transform: scale(90%);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main {
+    transform: scale(80%);
+  }
 }
