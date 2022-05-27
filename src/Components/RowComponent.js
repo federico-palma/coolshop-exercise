@@ -26,7 +26,13 @@ const RowComponent = (props) => {
 
   return (
     <div className="row">
-      <button type="button" className="operator" onClick={handleChangeOperator}>
+      <button
+        type="button"
+        className={
+          currentOperator === "+" ? "operator adding" : "operator substracting"
+        }
+        onClick={handleChangeOperator}
+      >
         {currentOperator}
       </button>
       <input
@@ -44,7 +50,9 @@ const RowComponent = (props) => {
       </button>
       <button
         type="button"
-        className="disable-btn"
+        className={
+          isEnabled === true ? "disable-btn enabled" : "disable-btn disabled"
+        }
         onClick={handleChangeEnabled}
       >
         {isEnabled === true ? "Disable" : "Enable"}

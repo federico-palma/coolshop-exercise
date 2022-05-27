@@ -39,7 +39,11 @@ button:active {
 .new-row-btn {
   font-size: 1.5rem;
   background-color: white;
-  padding: 5px;
+  padding: 5px 30px;
+}
+
+li {
+  list-style: none;
 }
 
 .row-list {
@@ -66,6 +70,16 @@ button:active {
   width: 26px;
   height: 26px;
   margin: 0px 3px;
+  padding: 0px;
+  border: 3px solid;
+}
+
+.adding {
+  border-color: green;
+}
+
+.substracting {
+  border-color: red;
 }
 
 .row-input {
@@ -73,16 +87,26 @@ button:active {
   font-size: 1.1rem;
   border-radius: 5px;
   border: 1px solid grey;
+  text-align: center;
 }
 
 .delete-btn {
   margin: 0px 3px;
-  background-color: rgb(235, 4, 4);
+  background-color: rgb(206, 3, 3);
   color: white;
 }
 
 .disable-btn {
   width: 72px;
+  color: white;
+}
+
+.enabled {
+  background-color: rgb(221, 145, 4);
+}
+
+.disabled {
+  background-color: green;
 }
 
 .result-container {
