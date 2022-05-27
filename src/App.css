@@ -8,7 +8,7 @@ body {
 
 main {
   background-color: #B9B7BD;
-  height: 100vh;
+  height: 98vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +32,10 @@ button:active {
   transform: scale(95%);
 }
 
+li {
+  list-style: none;
+}
+
 .row-container {
   height: 70%;
   margin: 10px auto;
@@ -44,10 +48,6 @@ button:active {
   font-size: 1.5rem;
   background-color: rgb(255, 255, 255);
   padding: 5px 30px;
-}
-
-li {
-  list-style: none;
 }
 
 .row-list {
@@ -146,5 +146,16 @@ li {
 @media only screen and (max-width: 400px) {
   main {
     transform: scale(80%);
+    height: 90vh;
+  }
+  .row-list {
+    padding: 1px;
+    min-width: 0px;
+  }
+  .row-input {
+    width: 50%;
+  }
+  .result-container {
+    width: 100vw;
   }
 }
