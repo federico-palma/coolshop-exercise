@@ -128,3 +128,7 @@ li {
   justify-content: center;
   align-items: center;
 }
+
+.empty-list-message {
+  font-size: 1.2rem;
+}
