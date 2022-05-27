@@ -3,7 +3,7 @@
 }
 
 main {
-  background-color: rgb(176, 75, 75);
+  background-color: rgb(165, 165, 165);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ button:active {
 
 .new-row-btn {
   font-size: 1.5rem;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 5px 30px;
 }
 
@@ -47,7 +47,7 @@ li {
 }
 
 .row-list {
-  background-color: rgb(254, 241, 225);
+  background-color: rgb(238, 238, 238);
   height: auto;
   min-width: 400px;
   width: fit-content;
@@ -105,7 +105,7 @@ li {
 }
 
 .enabled {
-  background-color: rgb(221, 145, 4);
+  background-color: rgb(221, 127, 4);
 }
 
 .disabled {
@@ -113,7 +113,7 @@ li {
 }
 
 .result-container {
-  background-color: rgb(165, 15, 15);
+  background-color: rgb(19, 22, 165);
   color: white;
   font-size: 1.2rem;
   width: 400px;
