@@ -6,10 +6,6 @@ import NumbersContext from "../Store-context/numbers-context";
 const RowsContainerComponent = () => {
   const numbersCtx = useContext(NumbersContext);
 
-  function Empty(params) {
-    
-  }
-
   return (
     <div className="row-container">
       <button className="new-row-btn" onClick={numbersCtx.handleAddNewRow}>
@@ -27,7 +23,7 @@ const RowsContainerComponent = () => {
               />
             );
           })}
-        {!numbersCtx.rowsArray.length && <EmptyListMessageComponent/>}
+        {!numbersCtx.rowsArray.length && <EmptyListMessageComponent />}
       </ul>
     </div>
   );
