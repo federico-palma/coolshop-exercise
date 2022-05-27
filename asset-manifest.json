@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/coolshop-exercise/static/css/main.16690e55.css",
+    "main.js": "/coolshop-exercise/static/js/main.f9cee96f.js",
+    "index.html": "/coolshop-exercise/index.html",
+    "main.16690e55.css.map": "/coolshop-exercise/static/css/main.16690e55.css.map",
+    "main.f9cee96f.js.map": "/coolshop-exercise/static/js/main.f9cee96f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16690e55.css",
+    "static/js/main.f9cee96f.js"
+  ]
+}
